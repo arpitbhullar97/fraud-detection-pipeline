@@ -1,0 +1,27 @@
+# Data (too large for GitHub)
+data/creditcard.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+data/creditcard.csv
+
+data/train_resampled.csv
+
+data/test.csv
+
+.DS_Store
+
+**/.DS_Store
