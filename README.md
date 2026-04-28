@@ -55,12 +55,12 @@ fraud-detection-pipeline/
 
 **Source:** [Kaggle — Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
-| Property | Value |
-|---|---|
-| Total transactions | 284,807 |
-| Fraud cases | 492 (0.17%) |
-| Features | 30 (V1–V28 PCA-transformed + Amount + Time) |
-| Missing values | None |
+| Property           | Value                                       |
+| ------------------ | ------------------------------------------- |
+| Total transactions | 284,807                                     |
+| Fraud cases        | 492 (0.17%)                                 |
+| Features           | 30 (V1–V28 PCA-transformed + Amount + Time) |
+| Missing values     | None                                        |
 
 > ⚠️ `creditcard.csv` is not tracked in this repo due to file size. Download it from Kaggle and place it in the `data/` folder.
 
@@ -69,43 +69,48 @@ fraud-detection-pipeline/
 ## 🧪 Methodology
 
 ### 1. Exploratory Data Analysis
+
 - Class imbalance visualization
 - Transaction amount and time distributions
 - Correlation heatmap
 - Top fraud-correlated features
 
 ### 2. Preprocessing
+
 - StandardScaler applied to `Amount` and `Time`
 - Stratified 80/20 train/test split
 - **SMOTE** applied to training set only (prevents data leakage)
 
 ### 3. Modeling
+
 Two models trained and compared:
 
-| Model | Strategy |
-|---|---|
-| Random Forest | `class_weight='balanced'`, 100 trees |
-| XGBoost | `scale_pos_weight` tuned to fraud ratio, 200 estimators |
+| Model         | Strategy                                                |
+| ------------- | ------------------------------------------------------- |
+| Random Forest | `class_weight='balanced'`, 100 trees                    |
+| XGBoost       | `scale_pos_weight` tuned to fraud ratio, 200 estimators |
 
 ### 4. Evaluation Metrics
+
 Accuracy is misleading on imbalanced data. We use:
 
-| Metric | Why it matters |
-|---|---|
-| **Recall** | % of actual frauds caught — most critical |
-| **Precision** | % of fraud alerts that are real fraud |
-| **F1** | Balance between precision and recall |
-| **ROC-AUC** | Overall discrimination ability |
-| **PR-AUC** | Best metric for imbalanced classification |
+| Metric        | Why it matters                            |
+| ------------- | ----------------------------------------- |
+| **Recall**    | % of actual frauds caught — most critical |
+| **Precision** | % of fraud alerts that are real fraud     |
+| **F1**        | Balance between precision and recall      |
+| **ROC-AUC**   | Overall discrimination ability            |
+| **PR-AUC**    | Best metric for imbalanced classification |
 
 ---
 
 ## 📈 Results
 
-| Model | Precision | Recall | F1 | ROC-AUC | PR-AUC |
-|---|---|---|---|---|---|
-| Random Forest | — | — | — | — | — |
-| XGBoost | — | — | — | — | — |
+| Model | Precision | Recall | F1  | ROC-AUC | PR-AUC |
+| ----- | --------- | ------ | --- | ------- | ------ |
+
+| Random Forest 0.535500 0.846900 0.656100 0.979100 0.811200 83 15 72
+| XGBoost 0.378900 0.877600 0.529200 0.977600 0.851900 86 12 141
 
 > Fill in your actual results after running `03_modeling.ipynb`
 
@@ -128,28 +133,34 @@ The dashboard connects to `outputs/predictions.csv` and includes:
 ## 🚀 How to Run
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/fraud-detection-pipeline.git
 cd fraud-detection-pipeline
 ```
 
 ### 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Add the dataset
+
 Download `creditcard.csv` from [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) and place it in `data/`
 
 ### 4. Run the notebooks in order
+
 ```bash
 jupyter notebook
 ```
+
 - `01_eda.ipynb`
 - `02_preprocessing.ipynb`
 - `03_modeling.ipynb`
 
 ### 5. Or run the src scripts directly
+
 ```bash
 python src/preprocess.py
 python src/model.py
@@ -172,4 +183,4 @@ python src/model.py
 ## 👤 Author
 
 **Arpit**  
-[LinkedIn](https://linkedin.com/in/YOUR_PROFILE) | [GitHub](https://github.com/YOUR_USERNAME)
+[LinkedIn](https://linkedin.com/in/arpitbhullar) | [GitHub](https://github.com/arpitbhullar97)
