@@ -106,13 +106,10 @@ Accuracy is misleading on imbalanced data. We use:
 
 ## 📈 Results
 
-| Model | Precision | Recall | F1  | ROC-AUC | PR-AUC |
-| ----- | --------- | ------ | --- | ------- | ------ |
-
-| Random Forest 0.535500 0.846900 0.656100 0.979100 0.811200 83 15 72
-| XGBoost 0.378900 0.877600 0.529200 0.977600 0.851900 86 12 141
-
-> Fill in your actual results after running `03_modeling.ipynb`
+| Model         | Precision | Recall | F1     | ROC-AUC | PR-AUC | Fraud Caught (TP) | Fraud Missed (FN) | False Alarms (FP) |
+| ------------- | --------- | ------ | ------ | ------- | ------ | ----------------- | ----------------- | ----------------- |
+| Random Forest | 0.5355    | 0.8469 | 0.6561 | 0.9791  | 0.8112 | 83                | 15                | 72                |
+| XGBoost       | 0.3789    | 0.8776 | 0.5292 | 0.9776  | 0.8519 | 86                | 12                | 141               |
 
 ---
 
